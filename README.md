@@ -12,10 +12,16 @@ This example program displays the caller information registered in the phonebook
 	Eclipse
 	Spring boot
 
-## Used to
-you should get sample code in "source" directory
+## Update project.
+    Right Click on CallerPopup project,  Maven > Update Project.
 
-#### Setting
+## Build project.
+    Right Click on CallerPopup project,  Run As > Maven test
+
+## Run project on eclipse.
+    Right Click on CallerPopup project,  Run As > Spring Boot App
+    
+## Setting
 you change the setting to use it.
 
 path : /source/src/main/resource/application.properties
@@ -27,6 +33,44 @@ path : /source/src/main/resource/application.properties
 	ipps.path.images = /images
 	ipps.path.answer = /answer
 	logging.level.com.comtec.ipps = DEBUG
+	
+## Example
+#### Phone Book Repository.
+	@Repository
+	public class ExamplePhoneBookRepository implements PhoneBookRepository {
+		static class UserImpl implements PhoneUser {
+            	String phoneNumber;
+            	String name;
+            	String imagePath;
+            
+            	UserImpl(String phoneNumber, String name, String imagePath) {
+                	this.phoneNumber = phoneNumber;
+                	this.name = name;
+                	this.imagePath = imagePath;
+		}
+
+		public String getPhoneNumber() {
+			return phoneNumber;
+		}
+
+            	public String getName() {
+                	return name;
+            	}
+
+            	public String getImagePath() {
+                	return imagePath;
+            	}
+        }
+        Map<String, UserImpl> users = new HashMap<>();
+        
+        public ExamplePhoneBookRepository() {
+            users.put("1005", new UserImpl("1005", "Sin Jageum", "SHC1005.png"));
+        }
+
+        @Override
+        public PhoneUser findUserByPhoneNumber(String phoneNumber) {
+            return users.get(phoneNumber);
+        }
 
 
 ## License
