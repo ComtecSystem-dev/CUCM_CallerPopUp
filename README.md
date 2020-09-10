@@ -43,34 +43,35 @@ path : /source/src/main/resource/application.properties
             	String name;
             	String imagePath;
             
-            	UserImpl(String phoneNumber, String name, String imagePath) {
-                	this.phoneNumber = phoneNumber;
-                	this.name = name;
-                	this.imagePath = imagePath;
+			UserImpl(String phoneNumber, String name, String imagePath) {
+				this.phoneNumber = phoneNumber;
+				this.name = name;
+				this.imagePath = imagePath;
+			}
+
+			public String getPhoneNumber() {
+				return phoneNumber;
+			}
+
+			public String getName() {
+				return name;
+			}
+
+			public String getImagePath() {
+				return imagePath;
+			}
+        	}
+		Map<String, UserImpl> users = new HashMap<>();
+
+		public ExamplePhoneBookRepository() {
+		    users.put("1005", new UserImpl("1005", "Sin Jageum", "SHC1005.png"));
 		}
 
-		public String getPhoneNumber() {
-			return phoneNumber;
+		@Override
+		public PhoneUser findUserByPhoneNumber(String phoneNumber) {
+		    return users.get(phoneNumber);
 		}
-
-            	public String getName() {
-                	return name;
-            	}
-
-            	public String getImagePath() {
-                	return imagePath;
-            	}
-        }
-        Map<String, UserImpl> users = new HashMap<>();
-        
-        public ExamplePhoneBookRepository() {
-            users.put("1005", new UserImpl("1005", "Sin Jageum", "SHC1005.png"));
-        }
-
-        @Override
-        public PhoneUser findUserByPhoneNumber(String phoneNumber) {
-            return users.get(phoneNumber);
-        }
+	}
 
 
 ## License
