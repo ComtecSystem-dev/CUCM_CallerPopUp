@@ -1,8 +1,12 @@
 ## What is this?
-This example program displays the caller information registered in the phonebook.
+This code provides the information of the called number to PopUp when a call comes to the IP phone..
+
         - Display image/text caller information depending on phone model.
+	
         - Auto-hide caller information when a call is dropped.
+	
         - Answer a call.
+	
         - Support 
 
 ## Development environment.
