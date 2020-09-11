@@ -11,6 +11,9 @@ This example program displays the caller information registered in the phonebook
 	Cisco IP Phone Services Software Development Kit
 	Eclipse
 	Spring boot
+	Spring Tool Suite: (installation: https://www.codejava.net/ides/eclipse/install-spring-tool-suite-for-existing-eclipse-ide)
+	Lombok: (installation: https://projectlombok.org/setup/eclipse)
+
 
 ## Update project.
     Right Click on CallerPopup project,  Maven > Update Project.
@@ -24,7 +27,13 @@ This example program displays the caller information registered in the phonebook
 ## Setting
 you change the setting to use it.
 
-path : /source/src/main/resource/application.properties
+#### CUCM Configuration
+	<img src="./image/CUCM_config.png">
+	<img src="./image/CUCM_config_2.png">
+	
+#### configuration
+	path : /source/src/main/resource/application.properties
+
 
 	server.port=<APP Lisen Port>
 	ipps.cucm.providerString=<CUCM IP1>,<CUCM IP2>;login=<CUCM APP ID>;passwd=<CUCM APP PWD>;appinfo=callerPopup
@@ -35,7 +44,15 @@ path : /source/src/main/resource/application.properties
 	logging.level.com.comtec.ipps = DEBUG
 	
 ## Example
+#### run screenshot
+	<img src="./image/popup.png">
+
+#### Code Example
+	com.comtec.ipps.cp.data.ExamplePhoneBookRepository {
+
+
 #### Phone Book Repository.
+You correct.
 	@Repository
 	public class ExamplePhoneBookRepository implements PhoneBookRepository {
 		static class UserImpl implements PhoneUser {
@@ -64,6 +81,7 @@ path : /source/src/main/resource/application.properties
 		Map<String, UserImpl> users = new HashMap<>();
 
 		public ExamplePhoneBookRepository() {
+		    // tHere you write.
 		    users.put("1005", new UserImpl("1005", "Sin Jageum", "SHC1005.png"));
 		}
 
