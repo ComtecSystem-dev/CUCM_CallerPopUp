@@ -28,8 +28,8 @@ This example program displays the caller information registered in the phonebook
 you change the setting to use it.
 
 #### CUCM Configuration
-	<img src="./image/CUCM_config.png">
-	<img src="./image/CUCM_config_2.png">
+<img src="./image/CUCM_config.png">
+<img src="./image/CUCM_config_2.png">
 	
 #### configuration
 	path : /source/src/main/resource/application.properties
@@ -45,7 +45,7 @@ you change the setting to use it.
 	
 ## Example
 #### run screenshot
-	<img src="./image/popup.png">
+<img src="./image/popup.png">
 
 #### Code Example
 	com.comtec.ipps.cp.data.ExamplePhoneBookRepository {
