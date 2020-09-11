@@ -48,40 +48,14 @@ you change the setting to use it.
 <img src="./image/popup.png">
 
 #### Code Example
-	com.comtec.ipps.cp.data.ExamplePhoneBookRepository {
-
-
-#### Phone Book Repository.
-You correct.
-	@Repository
+You correct file to com.comtec.ipps.cp.data.ExamplePhoneBookRepository
 	public class ExamplePhoneBookRepository implements PhoneBookRepository {
-		static class UserImpl implements PhoneUser {
-            	String phoneNumber;
-            	String name;
-            	String imagePath;
-            
-			UserImpl(String phoneNumber, String name, String imagePath) {
-				this.phoneNumber = phoneNumber;
-				this.name = name;
-				this.imagePath = imagePath;
-			}
-
-			public String getPhoneNumber() {
-				return phoneNumber;
-			}
-
-			public String getName() {
-				return name;
-			}
-
-			public String getImagePath() {
-				return imagePath;
-			}
+		...
         	}
 		Map<String, UserImpl> users = new HashMap<>();
 
 		public ExamplePhoneBookRepository() {
-		    // tHere you write.
+		    // Here you write.
 		    users.put("1005", new UserImpl("1005", "Sin Jageum", "SHC1005.png"));
 		}
 
