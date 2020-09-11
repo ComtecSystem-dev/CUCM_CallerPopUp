@@ -49,6 +49,7 @@ you change the setting to use it.
 
 #### Code Example
 You correct file to com.comtec.ipps.cp.data.ExamplePhoneBookRepository
+
 	public class ExamplePhoneBookRepository implements PhoneBookRepository {
 		...
         	}
